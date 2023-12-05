@@ -6,7 +6,6 @@ const score = document.querySelector(".score--value")
 const finalScorer = document.querySelector(".final-score> span")
 const menu = document.querySelector(".menu-screen")
 const buttonPlay = document.querySelector(".btn-play")
-
 const audio = new Audio('../assets/audio.mp3')
 
 const size = 30
@@ -17,7 +16,6 @@ let snake = [initialPosition]
 const incrementScore = ( ) =>{
     score.innerText = +score.innerText + 10
 }
-
 
 const randomNuber = (min, max) => {
     return Math.round( Math.random() * (max - min) + min)
@@ -58,7 +56,6 @@ const drawSnake = () => {
 
     snake.forEach((position, index) => {
 
-
         if (index == snake.length - 1){
             ctx.fillStyle ="white"
         }
@@ -72,7 +69,6 @@ const moverSnake = () => {
 
     const head = snake[snake.length - 1]
     
-
     if(direction == "right") {
     snake.push({ x: head.x + size, y: head.y })
     }
@@ -88,8 +84,6 @@ const moverSnake = () => {
                 snake.push({ x: head.x, y: head.y - size})
                 }
         
-    
-
     snake.shift()
 }
 
@@ -102,8 +96,6 @@ for (let i = 30; i < canvas.width; i += 30) {
     ctx.lineTo(i, 0) 
     ctx.lineTo(i, 600)
     ctx.stroke()
-
-
     ctx.beginPath()
     ctx.lineTo(0, i) 
     ctx.lineTo(600, i)
